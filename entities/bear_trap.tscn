@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://hpcxwubht1ye"]
+
+[ext_resource type="Script" uid="uid://b61ffvynl52iw" path="res://entities/bear_trap.gd" id="1_6rpgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uh65"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6rpgc"]
+size = Vector2(20, 20)
+
+[node name="bear_trap" type="Area2D"]
+script = ExtResource("1_6rpgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2uh65")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_6rpgc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

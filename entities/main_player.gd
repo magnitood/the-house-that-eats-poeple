@@ -8,6 +8,8 @@ var top_speed: int = 112
 
 var player_state: State
 
+var health: int = 100
+
 func _ready():
 	player_state = State.IDLE
 	velocity = Vector2(0, 0)
@@ -43,3 +45,10 @@ func _physics_process(delta):
 		_:
 			pass
 	move_and_slide()
+
+func take_damage(thing: String):
+	match thing:
+		"bear":
+			health -= 30
+		"bomb":
+			health -= 80
