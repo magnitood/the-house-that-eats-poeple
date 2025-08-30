@@ -14,6 +14,7 @@ func _ready() -> void:
 		max_pos = get_tree().get_first_node_in_group("spawn").global_position
 		max = absf(get_tree().get_first_node_in_group("spawn").global_position.x - get_tree().get_first_node_in_group("player").global_position.x)
 
+
 func _process(delta: float) -> void:
 	time+=delta
 	#print(time)

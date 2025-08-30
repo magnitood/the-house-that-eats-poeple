@@ -19,10 +19,16 @@ config/icon="res://icon.svg"
 
 GameManager="*res://autoload/game_manager.gd"
 
+
 [global_group]
 
 player=""
 spawn=""
+
+[display]
+
+window/size/mode=3
+window/size/borderless=true
 
 [input]
 
