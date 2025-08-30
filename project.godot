@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="the-house-that-eats-people"
-run/main_scene="uid://craaful0psgtc"
+run/main_scene="uid://dt8gdf6su6iie"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://autoload/game_manager.gd"
+
+[global_group]
+
+player=""
+spawn=""
 
 [input]
 
