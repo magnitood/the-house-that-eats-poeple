@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt8gdf6su6iie"]
+
+[ext_resource type="Script" uid="uid://sg8orgwkcf30" path="res://rooms/main_menu.gd" id="1_j4uc2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4uc2"]
+bg_color = Color(0.70051, 0.306519, 0.269866, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.325542, 0.0889973, 0.0182456, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_offset = Vector2(6.24, 5.075)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evptl"]
+bg_color = Color(0.424209, 0.336844, 0.185095, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.477237, 0.181743, 0.112811, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_offset = Vector2(6.24, 5.075)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gadwy"]
+bg_color = Color(0.904206, 0.553803, 0.511435, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.501269, 0.155471, 0.0450956, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_offset = Vector2(6.24, 5.075)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4uc2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -54.0
+offset_right = 148.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4uc2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_evptl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gadwy")
+text = "START GAME"
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4uc2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_evptl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gadwy")
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
