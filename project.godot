@@ -15,6 +15,19 @@ run/main_scene="uid://craaful0psgtc"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://autoload/game_manager.gd"
+
+[display]
+
+window/size/mode=3
+window/size/borderless=true
+
+[global_group]
+
+player=""
+
 [input]
 
 left={

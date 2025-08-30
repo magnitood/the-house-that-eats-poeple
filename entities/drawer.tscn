@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://fpuh8lj4mwka"]
+
+[ext_resource type="Script" uid="uid://i4epkwyu7py" path="res://entities/drawer.gd" id="1_j6yof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcefd"]
+size = Vector2(12, 7)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j6yof"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqg4n"]
+
+[node name="Drawer" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_j6yof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lcefd")
+
+[node name="DrawerSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(12, 6)
+texture = SubResource("PlaceholderTexture2D_j6yof")
+
+[node name="InteractSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+texture = SubResource("PlaceholderTexture2D_xqg4n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
